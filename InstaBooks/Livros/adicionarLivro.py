@@ -13,9 +13,10 @@ def livro():
         aba2 = input("Qual o autor do livro? ")
         aba3 = input("Qual o gênero do livro? ")
         aba4 = input("Qual a editora do livro? ")
-        aba5 = input("Avaliações do livro: ")
+        nota = [
+            float(input("Avaliações do livro: "))]
 
-        post = {"Título": aba1, "Autor": aba2, "Gênero": aba3, "Editora": aba4, "Avaliações": aba5}
+        post = {"Título": aba1, "Autor": aba2, "Gênero": aba3, "Editora": aba4, "Avaliações": nota}
 
         
         post_id = collection.insert_one(post)

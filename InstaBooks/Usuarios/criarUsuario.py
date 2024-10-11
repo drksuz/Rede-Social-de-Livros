@@ -11,12 +11,19 @@ def inserindoUsuario():
 
         aba1 = input("Insira o seu nome completo: ")
         aba2 = input("Insira o seu email: ")
-        aba3 = input("Quais livros você já leu: ")
-        aba4 = input("Quais seus livros favoritos: ")
 
-        post = {"Nome": aba1, "Email": aba2, "LivrosLidos": aba3, "LivrosFavoritos": aba4}
+        usuario = {
+            "Nome": aba1,
+            "Email": aba2,
+            "LivrosLidos": [],
+            "LivrosFavoritos": [],
+            "Seguidores": [],
+            "Seguindo": []
+        }
 
-        post_id = collection.insert_one(post)
+        #"LivrosLidos": aba3, "LivrosFavoritos": aba4
+
+        post_id = collection.insert_one(usuario)
 
         print("Perfil criado com sucesso!")
     except pymongo.errors as e:
